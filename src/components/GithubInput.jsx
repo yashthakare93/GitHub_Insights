@@ -11,7 +11,7 @@ const GitHubInput = ({ username, setUsername, fetchGitHubData, disabled }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchGitHubData(username);
-    navigate(`/insights/${username}`); // Navigate to insights page with username
+    navigate(`/insights/${username}`); 
   };
 
   return (

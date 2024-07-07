@@ -1,47 +1,49 @@
 import React from 'react';
+import ProfileTrophy from './ProfileTrophy';
 
-const UserInfo = ({ userData }) => (
-  <div className="w-full max-w-md mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <div className="flex flex-col items-center pb-10">
-      <div className='flex flex-row gap-8 items-center pt-5'>
-        <div className=''>
-          {userData.avatar_url && (
-            <img
-              className="w-24 h-24 mb-3 rounded-full shadow-lg"
-              src={userData.avatar_url}
-              alt={`${userData.name}'s avatar`}
-            />
-          )}
-            {userData.login && <span className="text-sm font-bold text-slate-600">@{userData.login}</span>}
+const UserInfo = ({ userData, username }) => (
+  <div className="w-full max-w-md mx-auto bg-white border border-gray-200 rounded-lg shadow">
+    <div className="flex flex-col items-center pb-10 pt-10">
+      <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-row items-center gap-8">
+          <div>
+            {userData.avatar_url && (
+              <img
+                className="w-24 h-24 mb-3 rounded-full shadow-lg"
+                src={userData.avatar_url}
+                alt={`${userData.name}'s avatar`}
+              />
+            )}
+            {userData.login && (
+              <span className="text-sm font-bold text-slate-600">@{userData.login}</span>
+            )}
+          </div>
+          <div>
+            {userData.name && (
+              <h5 className="mb-1 text-xl font-semibold text-gray-900 font-serif dark:text-white">
+                {userData.name}
+              </h5>
+            )}
+            {userData.location && (
+              <p className="text-sm text-gray-700 dark:text-gray-400">
+                Location: {userData.location}
+              </p>
+            )}
+            {userData.company && (
+              <p className="text-sm text-gray-700 dark:text-gray-400">
+                Company: {userData.company}
+              </p>
+            )}
+           
+          </div>
         </div>
-        <div>
-          {userData.name && <h5 className="mb-1 text-xl font-semibold text-gray-900 font-serif dark:text-white">{userData.name}</h5>}
-
-          {userData.location && (
-            <p className="text-sm text-gray-700 dark:text-gray-400">
-              Location:{userData.location}
-            </p>
-          )}
-          {userData.company && (
-            <p className="text-sm text-gray-700 dark:text-gray-400">
-             Company: {userData.company}
-            </p>
-          )}
-          {userData.followers && (
-            <p className="text-sm text-gray-700 dark:text-gray-400">
-             Followers : {userData.followers}
-            </p>
-          )}
-          {userData.following && (
-            <p className="text-sm text-gray-700 dark:text-gray-400">
-             Following : {userData.following}
-            </p>
-          )}
-        </div>
-
+       
       </div>
-      {userData.bio && <p className="text-sm text-gray-700 dark:text-gray-400 mt-2 text-center px-3">{userData.bio}</p>}
-
+      {userData.bio && (
+        <p className="text-sm text-gray-700 dark:text-gray-400 mt-2 text-center px-3">
+          {userData.bio}
+        </p>
+      )}
       <div className="flex mt-4">
         {userData.blog && (
           <a
@@ -61,6 +63,7 @@ const UserInfo = ({ userData }) => (
         )}
       </div>
     </div>
+
   </div>
 );
 

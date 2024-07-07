@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-const FollowingList = () => {
+const FollowingList = ({username}) => {
   const [followingList, setFollowingList] = useState([]);
 
   useEffect(() => {
     const fetchFollowing = async () => {
       try {
-        const response = await fetch('https://api.github.com/users/yashthakare93/following');
+        const response = await fetch(`https://api.github.com/users/${username}/following`);
         if (!response.ok) {
           throw new Error('Failed to fetch following list');
         }

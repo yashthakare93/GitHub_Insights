@@ -18,10 +18,12 @@ const FollowersCount = ({ username }) => {
   }, [username]);
 
   return (
-    <div>
-      <h5>Followers Count</h5>
-      <p>{followersCount}</p>
+    <div className="bg-white shadow-md rounded-lg p-4 ">
+    <h5 className="text-lg font-semibold mb-2">Followers</h5>
+    <div className="text-center">
+      <p className="text-xl font-bold text-blue-400">{followersCount}</p>
     </div>
+  </div>
   );
 };
 

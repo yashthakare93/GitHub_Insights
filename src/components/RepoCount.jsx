@@ -18,9 +18,11 @@ const RepoCount = ({ username }) => {
   }, [username]);
 
   return (
-    <div>
-      <h5>Repository Count</h5>
-      <p>{repoCount}</p>
+    <div className="bg-white shadow-md rounded-lg p-4 ">
+      <h5 className="text-lg font-semibold mb-2 ">Repository Count</h5>
+      <div className="text-center">
+        <p className="text-xl font-bold text-red-500">{repoCount}</p>
+      </div>
     </div>
   );
 };

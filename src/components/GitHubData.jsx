@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import GitHubService from '../Service/GithubService';
 import GitHubInput from './GithubInput'; // Adjust path as per your project structure
 import GitHubError from './GithubError'; // Adjust path as per your project structure
+import Navigation from '../Navigation/Navigation';
 
 
 const GitHubData = () => {
@@ -47,6 +48,7 @@ const GitHubData = () => {
 
   return (
     <>
+   
       <GitHubError error={error} />
       <GitHubInput
         username={username}
