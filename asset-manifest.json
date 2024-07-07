@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/GitHub_Insights/static/css/main.e492ef8c.css",
-    "main.js": "/GitHub_Insights/static/js/main.24e5bad7.js",
+    "main.js": "/GitHub_Insights/static/js/main.6b527433.js",
     "index.html": "/GitHub_Insights/index.html",
     "main.e492ef8c.css.map": "/GitHub_Insights/static/css/main.e492ef8c.css.map",
-    "main.24e5bad7.js.map": "/GitHub_Insights/static/js/main.24e5bad7.js.map"
+    "main.6b527433.js.map": "/GitHub_Insights/static/js/main.6b527433.js.map"
   },
   "entrypoints": [
     "static/css/main.e492ef8c.css",
-    "static/js/main.24e5bad7.js"
+    "static/js/main.6b527433.js"
   ]
 }
