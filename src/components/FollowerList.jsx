@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-const FollowingList = ({ username }) => {
-  const [followingList, setFollowingList] = useState([]);
+const FollowerList = ({ username }) => {
+  const [followerList, setFollowerList] = useState([]);
 
   useEffect(() => {
     const fetchFollowing = async () => {
       try {
-        const response = await fetch(`https://api.github.com/users/${username}/following`);
+        const response = await fetch(`https://api.github.com/users/${username}/followers`);
         if (!response.ok) {
           throw new Error('Failed to fetch following list');
         }
         const data = await response.json();
-        setFollowingList(data);
+        setFollowerList(data);
       } catch (error) {
         console.error('Error fetching follower list:', error);
       }
@@ -24,7 +24,7 @@ const FollowingList = ({ username }) => {
     <div className=' px-4'>
       <h2>Follower List</h2>
       <ul className="divide-y divide-gray-200">
-        {followingList.map((person) => (
+        {followerList.map((person) => (
           <li key={person.email} className="flex flex-col gap-6 py-5">
             <div className="flex justify-between gap-x-6">
               <div className="flex min-w-0 gap-x-4">
@@ -46,4 +46,4 @@ const FollowingList = ({ username }) => {
   );
 };
 
-export default FollowingList;
+export default FollowerList;

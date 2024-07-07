@@ -18,10 +18,10 @@ const FollowingCount = ({ username }) => {
   }, [username]);
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 ">
-    <h5 className="text-lg font-semibold mb-2">Following</h5>
+    <div className="py-4 text-center text-sm ">
+    <h5 className="font-semibold mb-2">Following</h5>
     <div className="text-center">
-      <p className="text-xl font-bold text-blue-400">{followingCount}</p>
+      <p className="font-bold text-blue-400">{followingCount}</p>
     </div>
   </div>
   );

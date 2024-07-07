@@ -18,11 +18,9 @@ const MostUsedLanguage = ({ username }) => {
   }, [username]);
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 ">
-      <h5 className="text-lg font-semibold mb-2">Most Used Language</h5>
-      <div className="text-center">
-        <p className="text-xl font-bold text-yellow-400">{mostUsedLanguage}</p>
-      </div>
+    <div className="p-4 text-center"> 
+      <h5 className="text-sm font-semibold mb-2">Top Language</h5>
+      <p className="text-sm font-bold text-yellow-400">{mostUsedLanguage}</p>
     </div>
   );
 };

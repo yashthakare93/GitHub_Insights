@@ -4,7 +4,7 @@ const githubToken = process.env.REACT_APP_GITHUB_TOKEN;
 const headers = { Authorization: `token ${githubToken}` };
 
 const GitHubService = {
-  // Fetch user data for a given username
+ 
   getUserData: async (username) => {
     try {
       const response = await axios.get(`https://api.github.com/users/${username}`, { headers });
@@ -25,7 +25,6 @@ const GitHubService = {
     }
   },
 
-  // Fetch repositories for a given username
   getUserRepos: async (username) => {
     try {
       const response = await axios.get(`https://api.github.com/users/${username}/repos`, { headers });
@@ -36,7 +35,6 @@ const GitHubService = {
     }
   },
 
-  // Fetch commits for a given repository belonging to a username
   getRepoCommits: async (username, repoName) => {
     try {
       const response = await axios.get(`https://api.github.com/repos/${username}/${repoName}/commits`, { headers });
@@ -52,8 +50,6 @@ const GitHubService = {
       throw new Error(`Error fetching commits for ${repoName}`);
     }
   },
-
-  // Fetch open issues for a given repository belonging to a username
   getRepoIssues: async (username, repoName) => {
     try {
       const response = await axios.get(`https://api.github.com/repos/${username}/${repoName}/issues?state=open`, { headers });
@@ -64,7 +60,6 @@ const GitHubService = {
     }
   },
 
-  // Fetch number of followers for a given username
   getUserFollowers: async (username) => {
     try {
       const response = await axios.get(`https://api.github.com/users/${username}/followers`, { headers });
@@ -78,14 +73,13 @@ const GitHubService = {
   getUserFollowing: async (username) => {
     try {
       const response = await axios.get(`https://api.github.com/users/${username}/following`, { headers });
-      return response.data.length; // Assuming we only need the count
+      return response.data.length;
     } catch (error) {
       console.error('Error fetching user following:', error.response ? error.response.data : error.message);
       throw new Error('Error fetching user following');
     }
   },
 
-  // Fetch most used programming language for a given username
   getUserMostUsedLanguage: async (username) => {
     try {
       const repos = await GitHubService.getUserRepos(username);

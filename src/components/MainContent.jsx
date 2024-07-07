@@ -6,11 +6,8 @@ import GitHubError from './GithubError';
 import ProfileTrophy from './ProfileTrophy';
 import GithubStreakStats from './GithubStreakStats';
 import FollowingList from './FollowingList';
-import MostUsedLanguage from './MostUsedLanguage';
-import RepoCount from './RepoCount';
-import FollowersCount from './FollowersCount';
-import FollowingCount from './FollowingCount';
-import Achievements from './Acheivements';
+import GitHubStats from './GithubStats'; // Corrected import name
+import FollowerList from './FollowerList';
 
 const MainContent = () => {
   const { username } = useParams();
@@ -50,7 +47,7 @@ const MainContent = () => {
   };
 
   return (
-    <div className="bg-custom-main bg-cover p-4 overflow-auto">
+    <div className="bg-custom-bg p-4 overflow-auto">
       <GitHubError error={error} />
 
       {loading && (
@@ -68,35 +65,35 @@ const MainContent = () => {
       )}
 
       {!loading && userData && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 ">
           {/* Left Column: UserInfo */}
           <div id="user-info">
             <UserInfo userData={userData} username={username} />
           </div>
 
-          {/* Right Column: ProfileTrophy */}
+          {/* Right Column: Profile Trophy */}
           <div id="profile-trophy">
             <ProfileTrophy username={username} />
           </div>
-        </div>
-      )}
 
-      {!loading && userData && (
-         <div className="mt-6 p-10">
-         <div className="flex justify-center items-center mb-12 gap-x-10">
-           <RepoCount username={username} />
-           <FollowersCount username={username}/>
-           <FollowingCount username={username}/>
-           <MostUsedLanguage username={username} />
-  
-         </div>
-         <div id="streak-stats" className="mb-6">
-           <GithubStreakStats username={username} />
-         </div>
-         <div id="following-list">
-           <FollowingList username={username} />
-         </div>
-       </div>
+          <div className='flex justify-center items-center' >
+          <GithubStreakStats username={username} />
+          </div>
+
+          <div className='' >
+          <GitHubStats username={username} />
+          </div>
+
+          <div >
+          
+          <FollowingList username={username} />
+          </div>
+
+          <div >
+          
+          <FollowerList username={username} />
+          </div>
+        </div>
       )}
     </div>
   );

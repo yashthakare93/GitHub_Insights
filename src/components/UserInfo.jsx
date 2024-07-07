@@ -1,8 +1,7 @@
 import React from 'react';
-import ProfileTrophy from './ProfileTrophy';
 
 const UserInfo = ({ userData, username }) => (
-  <div className="w-full max-w-md mx-auto bg-white border border-gray-200 rounded-lg shadow">
+  <div className="w-full bg-white border border-gray-200 rounded-lg shadow">
     <div className="flex flex-col items-center pb-10 pt-10">
       <div className="flex flex-col items-center gap-8">
         <div className="flex flex-row items-center gap-8">

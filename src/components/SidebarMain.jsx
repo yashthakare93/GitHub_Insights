@@ -5,10 +5,10 @@ import MainContent from './MainContent';
 const SidebarMain = () => {
   return (
     <div className="flex w-full min-h-screen">
-      <div className="w-1/6 bg-gray-800 text-white">
+      <div className="hidden sm:block w-1/6 bg-gray-800 text-white">
         <Sidebar />
       </div>
-      <div className="w-5/6 bg-white flex flex-col">
+      <div className="w-full sm:w-5/6 bg-white flex flex-col">
         <MainContent />
       </div>
     </div>

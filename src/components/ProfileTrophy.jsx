@@ -2,9 +2,9 @@ import React from 'react';
 
 const ProfileTrophy = ({ username }) => {
   return (
-    <div className="w-full h-full px-4">
+    <div className="lg:w-full h-full ">
       <iframe
-        src={`https://github-profile-trophy.vercel.app/?username=${username}&column=4&margin-w=20&margin-h=20`}
+        src={`https://github-profile-trophy.vercel.app/?username=${username}&column=4&margin-w=10&margin-h=10`}
         width="100%"
         height="100%"
         title="GitHub Profile Trophy"
